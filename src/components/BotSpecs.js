@@ -62,10 +62,7 @@ const BotSpecs = props => {
             <button className="ui button fluid" onClick={() => props.goBack()}>
               Go Back
             </button>
-            <button
-              className="ui button fluid"
-              onClick={() => props.addToArmy(bot)}
-            >
+            <button className="ui button fluid" onClick={() => props.addToArmy(bot)}>
               Enlist
             </button>
           </div>

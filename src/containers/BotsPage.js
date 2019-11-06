@@ -7,8 +7,7 @@ class BotsPage extends React.Component {
 
   state = {
     bots: [],
-    army: [],
-    selectedBot: {}
+    army: []
   };
 
   componentDidMount() {

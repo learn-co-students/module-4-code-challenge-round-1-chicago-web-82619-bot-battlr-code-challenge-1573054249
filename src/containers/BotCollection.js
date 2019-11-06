@@ -30,11 +30,7 @@ class BotCollection extends Component {
       );
     } else {
       return (
-        <BotSpecs
-          bot={this.state.currentBot}
-          enlist={this.props.addToArmy}
-          goBack={this.clearCurrentBot}
-          addToArmy={this.props.addToArmy}
+        <BotSpecs bot={this.state.currentBot} enlist={this.props.addToArmy} goBack={this.clearCurrentBot} addToArmy={this.props.addToArmy}
         />
       );
     }
