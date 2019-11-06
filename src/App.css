@@ -9,6 +9,18 @@
   min-height: 100%;
 }
 
+#sort-bar {
+  max-width: 100%;
+}
+
+#sort-bar > #filter{
+  max-width: 10%;
+}
+
+#sort-bar > #sort{
+  max-width: 10%;
+}
+
 .ui.grid {
   padding: 0px 20px;
 }
