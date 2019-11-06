@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import BotsPage from "./containers/BotsPage";
 import "./App.css";
+import NavBar from "./containers/NavBar"
 
 class App extends Component {
   render() {

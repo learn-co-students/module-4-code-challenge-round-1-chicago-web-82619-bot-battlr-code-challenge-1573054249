@@ -1,6 +1,9 @@
 import React from "react";
 import BotCollection from './BotCollection'
 import YourBotArmy from './YourBotArmy'
+import { BrowserRouter, Route } from 'react-router-dom'
+import NavBar from './NavBar'
+
 
 class BotsPage extends React.Component {
   //start here with your code for step one
@@ -39,11 +42,14 @@ class BotsPage extends React.Component {
   }
 
   render() {
-    return (
+    return(
+    <BrowserRouter>
       <div>
+        <NavBar />
         <YourBotArmy myBots={this.state.myBots} handleBotRemove={this.handleBotRemove}/>
         <BotCollection bots={this.state.bots} handleBotAdd={this.handleBotAdd}/>
       </div>
+    </BrowserRouter>
     );
   }
 
