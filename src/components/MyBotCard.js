@@ -1,7 +1,7 @@
 import React from "react";
 
-const BotCard = props => {
-  const { bot, handleBotAdd } = props;
+const MyBotCard = props => {
+  const { bot, handleBotRemove } = props;
 
   let botType;
 
@@ -24,7 +24,7 @@ const BotCard = props => {
       <div
         className="ui card"
         key={bot.id}
-        onClick={() => handleBotAdd(bot)}
+        onClick={() => handleBotRemove(bot)}
       >
         <div className="image">
           <img alt="oh no!" src={bot.avatar_url} />
@@ -59,4 +59,4 @@ const BotCard = props => {
 
 };
 
-export default BotCard;
+export default MyBotCard;
