@@ -24,13 +24,13 @@ class BotCollection extends Component {
       return (
         <div className="row">
           {this.props.bots.map(bot => (
-            <BotCard key={bot.id} bot={bot} viewBot={this.setCurrentBot} addToArmy={this.props.addToArmy}/>
+            <BotCard key={bot.id} bot={bot} viewBot={this.setCurrentBot} changeArmyStatus={this.props.changeArmyStatus}/>
           ))}
         </div>
       );
     } else {
       return (
-        <BotSpecs bot={this.state.currentBot} enlist={this.props.addToArmy} goBack={this.clearCurrentBot} addToArmy={this.props.addToArmy}
+        <BotSpecs bot={this.state.currentBot} enlist={this.props.changeArmyStatus} goBack={this.clearCurrentBot} changeArmyStatus={this.props.changeArmyStatus}
         />
       );
     }

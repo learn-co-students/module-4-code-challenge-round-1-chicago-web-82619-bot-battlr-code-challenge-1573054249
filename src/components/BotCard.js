@@ -20,12 +20,13 @@ const BotCard = props => {
   }
 
   return (
+    <div>
     <div className="ui column">
     <div
       className="ui card"
       key={props.bot.id}
     >
-      <div className="image" onClick={() => props.addToArmy(bot)}>
+      <div className="image" onClick={() => props.changeArmyStatus(bot)}>
         <img alt="oh no!" src={props.bot.avatar_url} />
       </div>
       <div className="content" onClick={() => props.viewBot(bot)}>
@@ -52,6 +53,7 @@ const BotCard = props => {
           {props.bot.armor}
         </span>
       </div>
+    </div>
     </div>
     </div>
   );

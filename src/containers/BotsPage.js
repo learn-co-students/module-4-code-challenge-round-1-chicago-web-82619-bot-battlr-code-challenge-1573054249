@@ -13,26 +13,55 @@ class BotsPage extends React.Component {
   componentDidMount() {
     fetch("https://bot-battler-api.herokuapp.com/api/v1/bots")
       .then(res => res.json())
-      .then(res => this.setBots(res));
+      .then(data => {
+        const bots = data.map(bot => {
+          return {
+            ...bot, isEnlisted: false
+          }
+        })
+        this.setState({bots})
+      });
   }
 
-  setBots = data => {
-    this.setState({
-      bots: data
-    });
-  };
+  changeArmyStatus = bot => {
 
-  addToArmy = bot => {
-    this.setState({
-      army: [...this.state.army, bot]
-    });
+    if(bot.isEnlisted == false){
+      const updatedBots = this.state.bots.map(b => {
+        if(b.id == bot.id){
+          return {
+            ...b, isEnlisted: true
+          }
+        } else {
+          return b
+        }
+      })
+      console.log(updatedBots)
+      this.setState({
+        army: [...this.state.army, bot],
+        bots: updatedBots
+      });
+    } else {
+      const updatedBots = this.state.bots.map(b => {
+        if(b.id == bot.id){
+          return {
+            ...b, isEnlisted: false
+          }
+        } else {
+          return b
+        }
+      })
+      console.log(updatedBots)
+      this.setState({
+        bots: updatedBots
+      });
+    }
   };
   
   render() {
     return (
       <div>
-        <YourBotArmy bots={this.state.army} />
-        <BotCollection bots={this.state.bots} addToArmy={this.addToArmy} />
+        <YourBotArmy bots={this.state.army} changeArmyStatus={this.changeArmyStatus}/>
+        <BotCollection bots={this.state.bots} changeArmyStatus={this.changeArmyStatus} />
       </div>
     );
   }
