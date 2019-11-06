@@ -25,10 +25,10 @@ class BotsPage extends React.Component {
   handleBotAdd = (bot) => {
     if (!this.state.myBots.includes(bot)) {
       this.setState(prevState=> {
-        return {
-          myBots: [...prevState.myBots, bot]
+          return {
+            myBots: [...prevState.myBots, bot]
+          }
         }
-      }
       )
     }
   }
