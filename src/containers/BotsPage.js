@@ -27,9 +27,10 @@ handleBotSelection = (bot) => {
 
    this.setState({selectedBots: newBots})
  }
- else {
-   this.setState({showBot: bot})
- }
+}
+
+setShowBot = (bot) => {
+  this.setState({showBot: bot})
 }
 
 addBotToArmy = (bot) => {
@@ -52,7 +53,7 @@ clearShowBot = () => {this.setState({showBot: {}})}
         {this.state.showBot.name ?
         <BotSpecs bot={this.state.showBot} goBack={this.clearShowBot} addBotToArmy={this.addBotToArmy}/>
         :
-        <BotCollection bots={this.state.bots} handleBotSelection={this.handleBotSelection}/>}
+        <BotCollection bots={this.state.bots} handleBotSelection={this.setShowBot}/>}
       </div>
     );
   }
