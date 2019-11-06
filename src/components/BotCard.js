@@ -24,7 +24,11 @@ const BotCard = props => {
       <div
         className="ui card"
         key={bot.id}
-        onClick={() => console.log("add code to connect event listener")}
+        // handle click event as anonymous function to pass props in callback
+        // I feel like this could be a ternary or conditional to decide if event
+        // of clicked Botcard is sent to BotArmy or removed. Right now, handleClick deals
+        // with both actions. 
+        onClick={() => props.handleClick(bot)}
       >
         <div className="image">
           <img alt="oh no!" src={bot.avatar_url} />
